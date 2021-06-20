@@ -110,8 +110,6 @@ public:
 
 	bool OnUserUpdate(float fElapsedTime) override
 	{
-		
-        
         Clear(olc::BLACK);
 
         // transform the provided polygon based on the provided position, scale, and angle(in radians)
