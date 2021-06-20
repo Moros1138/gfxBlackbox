@@ -19,7 +19,8 @@
     my original work! I take very little credit for adapting it for use with
     the OneLoneCoder PixelGameEngine, however, aside from the drawing functions,
     this header should be useful regardless of the framework you use to put your
-    pixels on the screen!
+    pixels on the screen! ( I lied, it relies on the 2d vector class provided by
+    PGE )
 
     CREDITS
 	~~~~~~~

@@ -12,8 +12,9 @@ allows me to drop it in and start re-using the code in new projects!
 Portions of the code have been adapted/rewritten and should NOT be considered
 my original work! I take very little credit for adapting it for use with
 the OneLoneCoder PixelGameEngine, however, aside from the drawing functions,
-this header should be useful regardless of the framework you use to put your
-pixels on the screen!
+~~this header should be useful regardless of the framework you use to put your
+pixels on the screen~~! (I lied, it relies on the 2d vector class provided by
+PGE)
 
 ## CREDITS
 
