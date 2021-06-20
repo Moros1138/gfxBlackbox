@@ -78,15 +78,15 @@ using namespace gfx_blackbox;
 class Example : public olc::PixelGameEngine
 {
 public:
-	Example()
-	{
-		// Name your application
-		sAppName = "Example";
-	}
+    Example()
+    {
+        // Name your application
+        sAppName = "Example";
+    }
 
 public:
-	bool OnUserCreate() override
-	{
+    bool OnUserCreate() override
+    {
         // define a simple polygon as our model
         model = {
             { -0.5f,  0.0f },
@@ -95,11 +95,11 @@ public:
             { -1.0f,  1.0f },
         };		
 
-		return true;
-	}
+        return true;
+    }
 
-	bool OnUserUpdate(float fElapsedTime) override
-	{
+    bool OnUserUpdate(float fElapsedTime) override
+    {
         Clear(olc::BLACK);
 
         // transform the provided polygon based on the provided position, scale, and angle(in radians)
@@ -120,16 +120,16 @@ public:
         Polygon::Stroke(this, transformed, olc::WHITE);
 
         return true;
-	}
+    }
 
     std::vector<olc::vf2d> model;
 };
 
 int main()
 {
-	Example demo;
-	if (demo.Construct(320, 180, 4, 4))
-		demo.Start();
-	return 0;
+    Example demo;
+    if (demo.Construct(320, 180, 4, 4))
+        demo.Start();
+    return 0;
 }
 ```
