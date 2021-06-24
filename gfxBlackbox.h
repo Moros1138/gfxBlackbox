@@ -2,7 +2,7 @@
     gfxBlackbox.h
 
     +-------------------------------------------------------------+
-    |              Moros1138's GFX BlackBox v0.01                 |
+    |              Moros1138's GFX BlackBox v0.02                 |
     |        "I hate maths and maths hates me!" -Moros1138        |
     +-------------------------------------------------------------+    
 
@@ -153,6 +153,9 @@ int main()
 
 namespace gfx_blackbox {
     
+    olc::vf2d Wrap(const olc::vf2d& point, const olc::vf2d& size);
+    olc::vi2d Wrap(const olc::vi2d& point, const olc::vi2d& size);
+    
     class Polygon
     {
     public: // MATHS AND ALGORITHMS
@@ -187,6 +190,30 @@ namespace gfx_blackbox {
 
 namespace gfx_blackbox {
     
+    olc::vf2d Wrap(const olc::vf2d& point, const olc::vf2d& size)
+    {
+        olc::vf2d wrapped = point;
+        
+        if(point.x < 0) wrapped.x += size.x;
+        if(point.y < 0) wrapped.y += size.y;
+        if(point.x > size.x-1) wrapped.x = fmodf(point.x, size.x);
+        if(point.x > size.y-1) wrapped.y = fmodf(point.y, size.y);
+
+        return wrapped;
+    }
+
+    olc::vi2d Wrap(const olc::vi2d& point, const olc::vi2d& size)
+    {
+        olc::vi2d wrapped = point;
+        
+        if(point.x < 0) wrapped.x += size.x;
+        if(point.y < 0) wrapped.y += size.y;
+        if(point.x > size.x-1) wrapped.x = point.x % size.x;
+        if(point.x > size.y-1) wrapped.y = point.y % size.y;
+
+        return wrapped;
+    }
+
     static const float EPSILON=0.0000000001f;
 
     // Polygon: MATHS AND ALGORITHMS
